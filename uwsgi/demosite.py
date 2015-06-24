@@ -24,5 +24,7 @@ def application(env, start_response):
             with tag('div', klass = 'row'):
                 with tag('div', klass = 'col-xs-1 col-md-2 col-md-offset-5'):
                     with tag('div', klass = 'list-group'):
+                        with tag('div', klass = 'list-group-item'):
+                            text('No Items Yet')
     
     return doc.getvalue()
