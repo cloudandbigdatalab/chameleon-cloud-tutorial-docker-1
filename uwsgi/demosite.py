@@ -2,6 +2,7 @@ import socket
 import psycopg2
 from yattag import Doc
 import markdown
+import codecs
 
 def application(env, start_response):
     start_response('200 OK', [('Content-Type','text/html')])
