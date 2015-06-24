@@ -9,6 +9,7 @@ def application(env, start_response):
     
     doc.asis('<!DOCTYPE html>')
     with tag('head'):
+        doc.stag('meta', name = 'viewport', content = 'width=device-width, initial-scale=1')
         with tag('title'):
             text('Chameleon Docker Demo')
         doc.stag('link', rel = 'stylesheet', href = 
