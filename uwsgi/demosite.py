@@ -25,7 +25,7 @@ def application(env, start_response):
                 with tag('div', klass = 'col-xs-1 col-md-2 col-md-offset-5'):
                     with tag('div', klass = 'list-group'):
                         conn = psycopg2.connect(host = socket.gethostbyname('postgres'), user = 'docker',
-                        database = 'docker')
+                        password = 'docker', database = 'docker')
                         cur = conn.cursor()
                         
                         cur.execute('select type from cloud-types')
