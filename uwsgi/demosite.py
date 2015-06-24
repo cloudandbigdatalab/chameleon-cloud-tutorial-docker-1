@@ -1,6 +1,7 @@
 import socket
 import psycopg2
 from yattag import Doc
+import markdown
 
 def application(env, start_response):
     start_response('200 OK', [('Content-Type','text/html')])
@@ -20,8 +21,9 @@ def application(env, start_response):
                 with tag('div', klass = 'col-xs-12 col-md-4 col-md-offset-4'):
                     with tag('h1', klass = 'text-center'):
                         text('Chameleon Cloud Docker Demo')
-                    with tag('p', klass = 'text-center'):
-                        text('[Demo Explanation Here]')
+                    description = open(description.md)
+                    doc.asis(markdown.markdown(description.read()))
+                    description.close()
             with tag('div', klass = 'row'):
                 with tag('div', klass = 'col-xs-12 col-md-2 col-md-offset-5'):
                     with tag('div', klass = 'list-group'):
