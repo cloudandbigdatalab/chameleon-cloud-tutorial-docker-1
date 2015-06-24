@@ -9,5 +9,7 @@ RUN pip install uwsgi
 RUN mkdir /chameleon-docker-uwsgi
 
 COPY demosite.ini demosite.py /chameleon-docker-uwsgi/
+
+EXPOSE 3031
  
 CMD /usr/local/bin/uwsgi --ini /chameleon-docker-uwsgi/demosite.ini
