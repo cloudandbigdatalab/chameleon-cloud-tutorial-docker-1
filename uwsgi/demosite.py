@@ -27,7 +27,7 @@ def application(env, start_response):
                     doc.asis(str(markdown.markdown(input_file.read())))
                     input_file.close()
             with tag('div', klass = 'row'):
-                with tag('div', klass = 'col-xs-12 col-md-4 col-md-offset-4'):
+                with tag('div', klass = 'col-xs-12 col-md-2 col-md-offset-5'):
                     with tag('div', klass = 'list-group'):
                         conn = psycopg2.connect(host = socket.gethostbyname('postgres'), user = 'docker',
                         password = 'docker', database = 'docker')
