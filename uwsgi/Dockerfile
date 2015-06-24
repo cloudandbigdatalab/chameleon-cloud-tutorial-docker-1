@@ -13,10 +13,10 @@ RUN pip install psycopg2
 RUN pip install yattag
 RUN pip install markdown
 
+EXPOSE 3031
+
 RUN mkdir /chameleon-docker-uwsgi
 
 COPY demosite.ini demosite.py description.md /chameleon-docker-uwsgi/
-
-EXPOSE 3031
  
 CMD /usr/local/bin/uwsgi --ini /chameleon-docker-uwsgi/demosite.ini
