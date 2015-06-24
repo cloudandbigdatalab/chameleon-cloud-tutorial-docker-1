@@ -1,6 +1,7 @@
 import socket
 import psycopg2
 from yattag import Doc
+from yattag import indent
 import markdown
 import codecs
 
@@ -40,5 +41,5 @@ def application(env, start_response):
                             
                         cur.close()
                         conn.close()
-    
+    print indent(doc.getValue());
     return doc.getvalue()
