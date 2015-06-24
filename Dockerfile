@@ -12,4 +12,4 @@ RUN mv /chameleon-docker-nginx/demosite /etc/nginx/sites-available/ && ln -s /et
 
 RUN echo "129.114.34.119 host" >> /etc/hosts
  
-CMD /usr/bin/nginx
+CMD /usr/sbin/nginx
