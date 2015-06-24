@@ -11,6 +11,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python-psycopg2
 RUN pip install uwsgi 
 RUN pip install psycopg2
 RUN pip install yattag
+RUN pip install markdown
 
 RUN mkdir /chameleon-docker-uwsgi
 
