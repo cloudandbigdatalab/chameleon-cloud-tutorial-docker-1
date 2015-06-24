@@ -2,9 +2,7 @@ FROM ubuntu
  
 MAINTAINER shawnmaten@gmail.com
  
-RUN apt-get update
- 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python-dev python-pip
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y python-dev python-pip
 
 RUN pip install uwsgi
 
