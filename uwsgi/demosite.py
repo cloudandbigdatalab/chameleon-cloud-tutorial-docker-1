@@ -1,6 +1,6 @@
 import socket
 import psycopg2
-import from yattag import Doc
+from yattag import Doc
 
 def application(env, start_response):
     start_response('200 OK', [('Content-Type','text/html')])
