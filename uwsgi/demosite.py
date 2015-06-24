@@ -8,10 +8,6 @@ import codecs
 def application(env, start_response):
     start_response('200 OK', [('Content-Type','text/html')])
     
-    input_file = codecs.open("description.md", mode="r")
-    description = markdown.markdown(input_file.read())
-    input_file.close()
-    
     doc, tag, text = Doc().tagtext()
     
     doc.asis('<!DOCTYPE html>')
@@ -27,7 +23,9 @@ def application(env, start_response):
                 with tag('div', klass = 'col-xs-12 col-md-4 col-md-offset-4'):
                     with tag('h1', klass = 'text-center'):
                         text('Chameleon Cloud Docker Demo')
-                    doc.asis(description)
+                    input_file = codecs.open("description.md", mode="r")
+                    doc.asis(str(markdown.markdown(input_file.read())))
+                    input_file.close()
             with tag('div', klass = 'row'):
                 with tag('div', klass = 'col-xs-12 col-md-2 col-md-offset-5'):
                     with tag('div', klass = 'list-group'):
