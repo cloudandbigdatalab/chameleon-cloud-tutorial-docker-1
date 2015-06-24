@@ -4,10 +4,12 @@ MAINTAINER shawnmaten@gmail.com
  
 RUN apt-get update
  
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python-dev python-pip git
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python-dev python-pip
 
 RUN pip install uwsgi
- 
-RUN git clone https://github.com/cloudandbigdatalab/chameleon-docker-uwsgi.git
+
+RUN mkdir /chameleon-docker-uwsgi
+
+COPY demosite.ini demosite.py /chameleon-docker-uwsgi
  
 CMD /usr/local/bin/uwsgi --ini /chameleon-docker-uwsgi/demosite.ini
