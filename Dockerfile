@@ -10,4 +10,4 @@ RUN pip install uwsgi
  
 RUN git clone https://github.com/cloudandbigdatalab/chameleon-docker-uwsgi.git
  
-CMD which uwsgi
+CMD /usr/local/bin/uwsgi --ini /chameleon-docker-uwsgi/demosite.ini
