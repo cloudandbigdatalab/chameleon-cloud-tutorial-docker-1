@@ -29,7 +29,7 @@ def application(env, start_response):
                         cur = conn.cursor()
                         
                         cur.execute('select type from cloud_types')
-                        for row in cur.fetchall:
+                        for row in cur.fetchall():
                             with tag('div', klass = 'list-group-item'):
                                 text(row[0])
                             
