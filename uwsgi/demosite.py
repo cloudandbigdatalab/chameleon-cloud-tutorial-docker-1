@@ -41,5 +41,5 @@ def application(env, start_response):
                             
                         cur.close()
                         conn.close()
-    print indent(doc.getValue());
+    print indent(doc.getvalue());
     return doc.getvalue()
