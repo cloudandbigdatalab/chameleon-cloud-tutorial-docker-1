@@ -14,7 +14,7 @@ RUN pip install yattag
 
 RUN mkdir /chameleon-docker-uwsgi
 
-COPY demosite.ini demosite.py /chameleon-docker-uwsgi/
+COPY demosite.ini demosite.py description.md /chameleon-docker-uwsgi/
 
 EXPOSE 3031
  
