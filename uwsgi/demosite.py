@@ -9,7 +9,7 @@ def application(env, start_response):
     
     doc.asis('<!DOCTYPE html>')
     with tag('head'):
-        with tag('title):
+        with tag('title'):
             text('Chameleon Docker Demo')
         doc.stag('link', rel = 'stylesheet', href = 
         'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
