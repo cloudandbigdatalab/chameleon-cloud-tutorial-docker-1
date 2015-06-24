@@ -23,6 +23,7 @@ def application(env, start_response):
                     with tag('h1', klass = 'text-center'):
                         text('Chameleon Cloud Docker Demo')
                     input_file = codecs.open("description.md", mode="r", encoding="utf-8")
+                    test = markdown.markdown(input_file.read())
                     #doc.asis(markdown.markdown(input_file.read()))
                     input_file.close()
             with tag('div', klass = 'row'):
