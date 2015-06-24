@@ -17,9 +17,9 @@ def application(env, start_response):
         with tag('div', klass = 'container-fluid'):
             with tag('div', klass = 'row'):
                 with tag('div', klass = 'col-xs-1 col-md-4 col-md-offset-4'):
-                    with tag('h1'):
+                    with tag('h1', klass = 'text-center'):
                         text('Chameleon Cloud Docker Demo')
-                    with tag('p'):
+                    with tag('p', klass = 'text-center'):
                         text('[Demo Explanation Here]')
             with tag('div', klass = 'row'):
                 with tag('div', klass = 'col-xs-1 col-md-2 col-md-offset-5'):
