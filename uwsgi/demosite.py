@@ -21,7 +21,7 @@ def application(env, start_response):
                 with tag('div', klass = 'col-xs-12 col-md-4 col-md-offset-4'):
                     with tag('h1', klass = 'text-center'):
                         text('Chameleon Cloud Docker Demo')
-                    description = open(description.md)
+                    description = open('description.md')
                     doc.asis(markdown.markdown(description.read()))
                     description.close()
             with tag('div', klass = 'row'):
