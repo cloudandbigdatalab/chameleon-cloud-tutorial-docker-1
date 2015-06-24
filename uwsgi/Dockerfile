@@ -2,9 +2,15 @@ FROM ubuntu
  
 MAINTAINER shawnmaten@gmail.com
  
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y python-dev python-pip
+RUN apt-get update 
 
-RUN pip install uwsgi
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python-dev 
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python-pip 
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python-psycopg2
+
+RUN pip install uwsgi 
+RUN pip install psycopg2
+RUN pip install yattag
 
 RUN mkdir /chameleon-docker-uwsgi
 
