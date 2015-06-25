@@ -5,7 +5,6 @@ create table demosite
 );
 
 insert into demosite (name) values
-(
   (Cirrus),
   (Cirrostratus),
   (Cirrocumulus),
@@ -15,5 +14,4 @@ insert into demosite (name) values
   (Cumulus),
   (Stratus),
   (Cumulonimbus),
-  (Stratocumulus)
-);
+  (Stratocumulus);
