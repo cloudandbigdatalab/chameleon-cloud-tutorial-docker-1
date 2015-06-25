@@ -16,10 +16,14 @@ It's expected that you have a general knowledge of Linux command-line environmen
 
 ## 1. Chameleon Resources
 
-Create 2 Chameleon baremetal servers. We used a CentOS 7 image for this tutorial but feel free to use any other Distro as long it runs Docker. Install Docker on each server. `sudo yum install docker` You may wish to also install an editor such as vim and git (if not already installed).
+Create 2 Chameleon baremetal servers. We used a CentOS 7 image for this tutorial but feel free to use any other Distro as long it runs Docker. Install Docker on each server. `sudo yum install docker` You may also wish to install an editor such as vim and git (if not already installed).
 
 ## 2. Container Setup
 
-Before you move on let's explain some things. You will be setting up one host with a Postgres (SQL database) container. The other host will be setup with Nginx (web server) and uWGSI (interface to Python script that generates actual page) containers. To connect the uWGSI container across hosts to the Postgres container we will use*ambassador* containers, one on each host.
+Before you move on let's explain some things. You will be setting up one host with a Postgres (SQL database) container. The other host will be setup with Nginx (web server) and uWGSI (interface to Python script that generates actual page) containers. To connect the uWGSI container across hosts to the Postgres container we will use*ambassador* containers, one on each host.  
+
+You have two options to deploy the containers. You can pull already built containers from our [Docker Hub]() repos and run them. Or you can pull this GitHub repo and build the Docker images yourself using the Dockerfile in each directory. If you want to edit the site
 
 ### Host 1
+
+#### 1. Run
