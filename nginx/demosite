@@ -1,6 +1,5 @@
 server {
-    listen 80;
-    server_name 129.114.34.119;
+    listen 80 default_server;
     
     location / {
         include uwsgi_params;
