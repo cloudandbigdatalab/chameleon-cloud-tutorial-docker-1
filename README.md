@@ -31,7 +31,7 @@ You have two options to deploy the containers. You can pull already built contai
 ### Host 1
 
 #### Pulling from Docker Hub
-```
+```sh
 # start postgres container
 # port 3031 is set to be exposed in Dockerfile
 # -d run as daemon (run in background)
@@ -44,7 +44,7 @@ sudo docker run --name host2_ambassador -d --link postgres:postgres -p 3031:3031
 ```
 
 #### Building from GitHub
-```
+```sh
 # clone repo
 git clone https://github.com/cloudandbigdatalab/chameleon-docker-tutorial.git
 
