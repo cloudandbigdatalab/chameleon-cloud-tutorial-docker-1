@@ -41,7 +41,7 @@ def application(env, start_response):
                             cur.close()
                             conn.close()
             except:
-                print ("Postgres error:", sys.exc_info()[0])
+                print "Postgres error:", sys.exc_info()
                 with tag('div', klass = 'row'):
                     with tag('div', klass = 'col-xs-12 col-md-6 col-md-offset-3'):
                         with tag('div', klass = 'alert alert-warning text-center', role = 'alert'):
