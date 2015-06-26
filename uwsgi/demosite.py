@@ -4,6 +4,7 @@ from yattag import Doc
 from yattag import indent
 import markdown
 import codecs
+import sys
 
 def application(env, start_response):
     start_response('200 OK', [('Content-Type','text/html')])
@@ -40,8 +41,7 @@ def application(env, start_response):
                             cur.close()
                             conn.close()
                         except:
-                            print "Postgres error:", sys.exc_info()[0]
-                            # <div class="alert alert-warning" role="alert">...</div>
+                            print ("Postgres error:", sys.exc_info()[0])
                             with tag('dive', klass = 'alert alert-warning', role = 'alert'):
                                 with tag('b'):
                                     text('Error!')
