@@ -104,7 +104,7 @@ sudo docker run --name uwsgi -d --link host1_ambassador:postgres cloudandbigdata
 
 # start nginx container, linking to uwsgi container
 # map port 80 to outside, http default port
-sudo docker --name nginx -d --link uwsgi:uwsgi -p 80:80 cloudandbigdatalab/nginx
+sudo docker run --name nginx -d --link uwsgi:uwsgi -p 80:80 cloudandbigdatalab/nginx
 ```
 
 ### Test Website
