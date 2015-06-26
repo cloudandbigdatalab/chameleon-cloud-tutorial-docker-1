@@ -90,14 +90,14 @@ sudo docker build -t postgres .
 #### Pulling from Docker Hub
 
 **Note**  
-You will need to replace the ip in one of the following commands.
+You will need to replace the ip in one of the following commands. If you need to restart the uwsgi container you will need to rm both the uwsgi and nginx containers then run again. The uwsgi container must be run first.
 
 ```sh
 # start ambassador container
 # --expose exposes port 3031 to containers that link to this one
 # -e sets environment variable for postgres, shared to linked containers
-# replace 10.12.0.51 with local ip of your host 1 instance
-sudo docker run --name host1_ambassador -d --expose 3031 -e POSTGRES_PORT_3031_TCP=tcp://10.12.0.51:3031 svendowideit/ambassador
+# replace host1_local_ip with local ip of your host 1 instance
+sudo docker run --name host1_ambassador -d --expose 3031 -e POSTGRES_PORT_3031_TCP=tcp://host1_local_ip:3031 svendowideit/ambassador
 
 # start uwsgi container, linking to host1_ambassador
 sudo docker run --name uwsgi -d --link host1_ambassador:postgres cloudandbigdatalab/uwsgi
