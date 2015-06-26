@@ -100,7 +100,7 @@ You will need to replace the ip in one of the following commands.
 sudo docker run --name host1_ambassador -d --expose 3031 -e POSTGRES_PORT_3031_TCP=tcp://10.12.0.51:3031 svendowideit/ambassador
 
 # start uwsgi container, linking to host1_ambassador
-sudo docker --name uwsgi -d --link host1_ambassador:postgres cloudandbigdatalab/uwsgi
+sudo docker run --name uwsgi -d --link host1_ambassador:postgres cloudandbigdatalab/uwsgi
 
 # start nginx container, linking to uwsgi container
 # map port 80 to outside, http default port
