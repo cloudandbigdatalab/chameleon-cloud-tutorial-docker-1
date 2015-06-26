@@ -29,15 +29,16 @@ def application(env, start_response):
             with tag('div', klass = 'row'):
                 with tag('div', klass = 'col-xs-12 col-md-2 col-md-offset-5'):
                     with tag('div', klass = 'list-group'):
-                        conn = psycopg2.connect(host = socket.gethostbyname('postgres'), user = 'docker',
-                        password = 'docker', database = 'docker')
-                        cur = conn.cursor()
-                        cur.execute('select type from cloud_types')
-                        for row in cur.fetchall():
-                            with tag('div', klass = 'list-group-item'):
-                                text(row[0])
-                            
-                        cur.close()
-                        conn.close()
-    print indent(doc.getvalue())
+                        try:
+                            conn = psycopg2.connect(host = socket.gethostbyname('postgres'), user = 'docker',
+                            password = 'docker', database = 'docker')
+                            cur = conn.cursor()
+                            cur.execute('select type from cloud_types')
+                            for row in cur.fetchall():
+                                with tag('div', klass = 'list-group-item'):
+                                    text(row[0])
+                            cur.close()
+                            conn.close()
+                        except:
+                            print "Postgres error:", sys.exc_info()[0]
     return doc.getvalue()
