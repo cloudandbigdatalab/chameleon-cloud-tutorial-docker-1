@@ -41,6 +41,12 @@ sudo docker run --name postgres -d cloudandbigdatalab/postgres
 # start ambassador container, linking to postgres
 # -p map port 3031 from within container to outside
 sudo docker run --name host2_ambassador -d --link postgres:postgres -p 3031:3031 svendowideit/ambassador
+
+# you can chekck that your containers are running with
+sudo docker ps
+
+# if there's a problem check the logs (stdout of your container)
+sudo docker logs container_name
 ```
 
 #### Building from GitHub
@@ -80,6 +86,12 @@ sudo docker --name uwsgi -d --link host1_ambassador:postgres cloudandbigdatalab/
 # start nginx container, linking to uwsgi container
 # map port 80 to outside, http default port
 sudo docker --name nginx -d --link uwsgi:uwsgi -p 80:80 cloudandbigdatalab/nginx
+
+# you can chekck that your containers are running with
+sudo docker ps
+
+# if there's a problem check the logs (stdout of your container)
+sudo docker logs container_name
 ```
 
 ### Test Website
