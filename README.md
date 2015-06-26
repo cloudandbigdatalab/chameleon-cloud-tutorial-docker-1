@@ -28,6 +28,31 @@ Before you move on let's explain some things. You will be setting up one host wi
 **Note**  
 You have two options to deploy the containers. You can pull already built containers from our [Docker Hub](https://hub.docker.com/u/cloudandbigdatalab/) repos and run them. Or you can pull this GitHub repo and build the Docker images yourself using the Dockerfile in each directory. If you want to edit the site content you will need to build the images yourself after making your edits, although you can edit the database by simply connecting to it. The ambassador containers we're using are maintained by a Docker employee and thus we'll only be pulling those. You can pull an image before running it with `sudo docker pull image_name` or you can  just `sudo docker run --name container_name -d image_name` and Docker will automatically pull the image for you.
 
+**Useful Commands**
+```sh
+# show running containers
+sudo docker ps
+
+# show all, even stopped, containers
+sudo docker ps -a
+
+# check container's logs (stdout of container)
+# useful if there's a problem
+sudo docker logs container_name
+
+# to stop container
+sudo docker stop container_name_or_id
+
+# to remove container
+sudo docker rm container_name_or_id
+
+# to remove and stop together
+sudo docker rm -f container_name_or_id
+
+# to remove image
+sudo docker rmi image_name_or_id
+```
+
 ### Host 1
 
 #### Pulling from Docker Hub
@@ -41,12 +66,6 @@ sudo docker run --name postgres -d cloudandbigdatalab/postgres
 # start ambassador container, linking to postgres
 # -p map port 3031 from within container to outside
 sudo docker run --name host2_ambassador -d --link postgres:postgres -p 3031:3031 svendowideit/ambassador
-
-# you can check that your containers are running with
-sudo docker ps
-
-# if there's a problem check the logs (stdout of your container)
-sudo docker logs container_name
 ```
 
 #### Building from GitHub
@@ -86,12 +105,6 @@ sudo docker --name uwsgi -d --link host1_ambassador:postgres cloudandbigdatalab/
 # start nginx container, linking to uwsgi container
 # map port 80 to outside, http default port
 sudo docker --name nginx -d --link uwsgi:uwsgi -p 80:80 cloudandbigdatalab/nginx
-
-# you can chekck that your containers are running with
-sudo docker ps
-
-# if there's a problem check the logs (stdout of your container)
-sudo docker logs container_name
 ```
 
 ### Test Website
