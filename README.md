@@ -68,7 +68,7 @@ sudo docker run --name postgres -d cloudandbigdatalab/postgres
 sudo docker run --name host2_ambassador -d --link postgres:postgres -p 5432:5432 svendowideit/ambassador
 ```
 
-#### Building from GitHub
+#### Building from Dockerfile
 ```sh
 # clone repo
 git clone https://github.com/cloudandbigdatalab/chameleon-docker-tutorial.git
@@ -107,7 +107,7 @@ sudo docker run --name uwsgi -d --link host1_ambassador:postgres cloudandbigdata
 sudo docker run --name nginx -d --link uwsgi:uwsgi -p 80:80 cloudandbigdatalab/nginx
 ```
 
-#### Building from GitHub
+#### Building from Dockerfile
 ```sh
 # clone repo
 git clone https://github.com/cloudandbigdatalab/chameleon-docker-tutorial.git
