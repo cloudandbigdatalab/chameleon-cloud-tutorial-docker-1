@@ -51,6 +51,11 @@ git clone https://github.com/cloudandbigdatalab/chameleon-docker-tutorial.git
 # move into postgres directory
 cd postgres
 
-# build postgres image, -t to name
-sudo docker build -t postgres
+# build postgres image
+# -t to name
+# . is path to Dockerfile
+sudo docker build -t postgres .
+
+# from here you run the same commands from the pulling section
+# except change cloudandbigdatalab/postgres to postgres in run command
 ```
