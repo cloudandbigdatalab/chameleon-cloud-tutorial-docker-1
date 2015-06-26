@@ -110,3 +110,5 @@ sudo docker run --name nginx -d --link uwsgi:uwsgi -p 80:80 cloudandbigdatalab/n
 ### Test Website
 
 Visit the public ip of your host 2 instance in the browser. You should see the page below. If it worked congratulations!
+
+![Demosite Screenshot](https://raw.githubusercontent.com/cloudandbigdatalab/chameleon-docker-tutorial/master/tutorial_photos/demosite_screenshot.png)
