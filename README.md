@@ -84,4 +84,4 @@ sudo docker --name nginx -d --link uwsgi:uwsgi -p 80:80 cloudandbigdatalab/nginx
 
 ### Test Website
 
-Visit the public ip of your host 2 instance in the browser. You should see the site page below. If it worked congratulations!
+Visit the public ip of your host 2 instance in the browser. You should see the page below. If it worked congratulations!
