@@ -16,7 +16,7 @@ It's expected that you have a general knowledge of Linux command-line environmen
 
 ## 1. Chameleon Resources
 
-Create 2 Chameleon baremetal servers. We used a CentOS 7 image for this tutorial but feel free to use any other Distro as long it runs Docker. Install Docker on each server. `sudo yum install docker` You may also wish to install an editor such as vim and git (if not already installed).  
+Create 2 Chameleon baremetal servers. We used a CentOS 7 image for this tutorial but feel free to use any other Distro as long it runs Docker. Install Docker on each server with `sudo yum install docker`. You may also wish to install an editor such as vim and git (if not already installed).  
 
 **Important**  
 The Docker daemon needs to be running before you can use Docker. Start it with `sudo service docker start`. If you're getting errors with every Docker command this may be the cause.
