@@ -81,8 +81,8 @@ cd postgres
 # . is path to Dockerfile
 sudo docker build -t postgres .
 
-# from here you run the same commands from the pulling section
-# except change cloudandbigdatalab/postgres to postgres in run command
+# from here you run the same commands as if you pulled the images
+# EXCEPT change cloudandbigdatalab/image_name to image_name
 ```
 
 ### Host 2
@@ -107,8 +107,33 @@ sudo docker run --name uwsgi -d --link host1_ambassador:postgres cloudandbigdata
 sudo docker run --name nginx -d --link uwsgi:uwsgi -p 80:80 cloudandbigdatalab/nginx
 ```
 
+#### Building from GitHub
+```sh
+# clone repo
+git clone https://github.com/cloudandbigdatalab/chameleon-docker-tutorial.git
+
+# move into uwsgi directory
+cd uwsgi
+
+# build postgres image
+# -t to name
+# . is path to Dockerfile
+sudo docker build -t uwsgi .
+
+# move into nginx directory
+cd ../nginx
+
+# build nginx image
+# -t to name
+# . is path to Dockerfile
+sudo docker build -t nginx .
+
+# from here you run the same commands as if you pulled the images
+# EXCEPT change cloudandbigdatalab/image_name to image_name
+```
+
 ### Test Website
 
-Visit the public ip of your host 2 instance in the browser. You should see the page below. If it worked congratulations!
+Visit the public ip of your host 2 instance in your browser. You should see the page below. If it worked congratulations!
 
 ![Demosite Screenshot](https://raw.githubusercontent.com/cloudandbigdatalab/chameleon-docker-tutorial/master/tutorial_photos/demosite_screenshot.png)
