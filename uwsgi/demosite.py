@@ -34,7 +34,7 @@ def application(env, start_response):
                             conn = psycopg2.connect(host = socket.gethostbyname('postgres'), user = 'docker',
                             password = 'docker', database = 'docker')
                             cur = conn.cursor()
-                            cur.execute('select type from cloud_types')
+                            cur.execute('select name from demosite')
                             for row in cur.fetchall():
                                 with tag('div', klass = 'list-group-item'):
                                     text(row[0])
