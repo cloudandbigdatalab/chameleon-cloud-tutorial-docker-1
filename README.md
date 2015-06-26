@@ -115,7 +115,7 @@ git clone https://github.com/cloudandbigdatalab/chameleon-docker-tutorial.git
 # move into uwsgi directory
 cd uwsgi
 
-# build postgres image
+# build uwsgi image
 # -t to name
 # . is path to Dockerfile
 sudo docker build -t uwsgi .
@@ -124,8 +124,6 @@ sudo docker build -t uwsgi .
 cd ../nginx
 
 # build nginx image
-# -t to name
-# . is path to Dockerfile
 sudo docker build -t nginx .
 
 # from here you run the same commands as if you pulled the images
