@@ -27,10 +27,10 @@ def application(env, start_response):
                     input_file = codecs.open("description.md", mode="r")
                     doc.asis(str(markdown.markdown(input_file.read())))
                     input_file.close()
-            with tag('div', klass = 'row'):
-                with tag('div', klass = 'col-xs-12 col-md-2 col-md-offset-5'):
-                    with tag('div', klass = 'list-group'):
-                        try:
+            try:
+                with tag('div', klass = 'row'):
+                    with tag('div', klass = 'col-xs-12 col-md-2 col-md-offset-5'):
+                        with tag('div', klass = 'list-group'):
                             conn = psycopg2.connect(host = socket.gethostbyname('postgres'), user = 'docker',
                             password = 'docker', database = 'docker')
                             cur = conn.cursor()
@@ -40,11 +40,11 @@ def application(env, start_response):
                                     text(row[0])
                             cur.close()
                             conn.close()
-                        except:
-                            print ("Postgres error:", sys.exc_info()[0])
-                            with tag('dive', klass = 'alert alert-warning', role = 'alert'):
-                                with tag('b'):
-                                    text('Error!')
-                                text(' ')
-                                text('Unable to retrieve database items.')
+            except:
+                print ("Postgres error:", sys.exc_info()[0])
+                with tag('dive', klass = 'alert alert-warning', role = 'alert'):
+                    with tag('b'):
+                        text('Error!')
+                    text(' ')
+                    text('Unable to retrieve database items.')
     return doc.getvalue()
