@@ -32,10 +32,14 @@ You have two options to deploy the containers. You can pull already built contai
 
 #### Pulling from Docker Hub
 ```
-# start postgres container, port 3031 is set to be exposed in Dockerfile, -d run as daemon (run in background), user: cloudandbigdatalab, repo: postgres
+# start postgres container
+# port 3031 is set to be exposed in Dockerfile
+# -d run as daemon (run in background)
+# user: cloudandbigdatalab, repo: postgres
 sudo docker run --name postgres -d cloudandbigdatalab/postgres
 
-# start ambassador container, linking to postgres, map port 3031 from within container to outside
+# start ambassador container, linking to postgres,
+# -p map port 3031 from within container to outside
 sudo docker run --name host2_ambassador -d --link postgres:postgres -p 3031:3031 svendowideit/ambassador
 ```
 
