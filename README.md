@@ -58,14 +58,14 @@ sudo docker rmi image_name_or_id
 #### Pulling from Docker Hub
 ```sh
 # start postgres container
-# port 3031 is set to be exposed in Dockerfile
+# port 5432 is set to be exposed in Dockerfile
 # -d run as daemon (run in background)
 # user: cloudandbigdatalab, repo: postgres
 sudo docker run --name postgres -d cloudandbigdatalab/postgres
 
 # start ambassador container, linking to postgres
-# -p map port 3031 from within container to outside
-sudo docker run --name host2_ambassador -d --link postgres:postgres -p 3031:3031 svendowideit/ambassador
+# -p map port 5432 from within container to outside
+sudo docker run --name host2_ambassador -d --link postgres:postgres -p 5432:5432 svendowideit/ambassador
 ```
 
 #### Building from GitHub
@@ -94,10 +94,10 @@ You will need to replace the ip in one of the following commands. If you need to
 
 ```sh
 # start ambassador container
-# --expose exposes port 3031 to containers that link to this one
+# --expose port 5432 (postgres default) to linking containers
 # -e sets environment variable for postgres, shared to linked containers
 # replace host1_local_ip with local ip of your host 1 instance
-sudo docker run --name host1_ambassador -d --expose 3031 -e POSTGRES_PORT_3031_TCP=tcp://host1_local_ip:3031 svendowideit/ambassador
+sudo docker run --name host1_ambassador -d --expose 5432 -e POSTGRES_PORT_5432_TCP=tcp://host1_local_ip:5432 svendowideit/ambassador
 
 # start uwsgi container, linking to host1_ambassador
 sudo docker run --name uwsgi -d --link host1_ambassador:postgres cloudandbigdatalab/uwsgi
