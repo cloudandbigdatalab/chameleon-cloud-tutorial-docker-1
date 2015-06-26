@@ -41,4 +41,10 @@ def application(env, start_response):
                             conn.close()
                         except:
                             print "Postgres error:", sys.exc_info()[0]
+                            # <div class="alert alert-warning" role="alert">...</div>
+                            with tag('dive', klass = 'alert alert-warning', role = 'alert'):
+                                with tag('b'):
+                                    text('Error!')
+                                text(' ')
+                                text('Unable to retrieve database items.')
     return doc.getvalue()
