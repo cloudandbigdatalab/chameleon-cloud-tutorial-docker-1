@@ -42,7 +42,7 @@ sudo docker run --name postgres -d cloudandbigdatalab/postgres
 # -p map port 3031 from within container to outside
 sudo docker run --name host2_ambassador -d --link postgres:postgres -p 3031:3031 svendowideit/ambassador
 
-# you can chekck that your containers are running with
+# you can check that your containers are running with
 sudo docker ps
 
 # if there's a problem check the logs (stdout of your container)
