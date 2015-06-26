@@ -26,8 +26,27 @@ The Docker daemon needs to be running before you can use Docker. Start it with `
 Before you move on let's explain some things. You will be setting up one host with a Postgres (SQL database) container. The other host will be setup with Nginx (web server) and uWGSI (interface to Python script that generates actual page) containers. To connect the uWGSI container across hosts to the Postgres container we will use *ambassador* containers, one on each host.  
 
 **Note**  
-You have two options to deploy the containers. You can pull already built containers from our [Docker Hub]() repos and run them. Or you can pull this GitHub repo and build the Docker images yourself using the Dockerfile in each directory. If you want to edit the site content you will need to build the images yourself after making your edits, although you can edit the database by simply connecting to it. The ambassador containers we're using are maintained by a Docker employee and thus we'll only be pulling those.
+You have two options to deploy the containers. You can pull already built containers from our [Docker Hub](https://hub.docker.com/u/cloudandbigdatalab/) repos and run them. Or you can pull this GitHub repo and build the Docker images yourself using the Dockerfile in each directory. If you want to edit the site content you will need to build the images yourself after making your edits, although you can edit the database by simply connecting to it. The ambassador containers we're using are maintained by a Docker employee and thus we'll only be pulling those. You can pull an image before running it with `sudo docker pull image_name` or you can  just `sudo docker run --name container_name -d image_name` and Docker will automatically pull the image for you.
 
 ### Host 1
 
-#### 1. Run
+#### Pulling from Docker Hub
+```
+# start postgres container, port 3031 is set to be exposed in Dockerfile, -d run as daemon (run in background), user: cloudandbigdatalab, repo: postgres
+sudo docker run --name postgres -d cloudandbigdatalab/postgres
+
+# start ambassador container, linking to postgres, map port 3031 from within container to outside
+sudo docker run --name host2_ambassador -d --link postgres:postgres -p 3031:3031 svendowideit/ambassador
+```
+
+#### Building from GitHub
+```
+# clone repo
+git clone https://github.com/cloudandbigdatalab/chameleon-docker-tutorial.git
+
+# move into postgres directory
+cd postgres
+
+# build postgres image, -t to name
+sudo docker build -t postgres
+```
