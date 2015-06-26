@@ -38,7 +38,7 @@ You have two options to deploy the containers. You can pull already built contai
 # user: cloudandbigdatalab, repo: postgres
 sudo docker run --name postgres -d cloudandbigdatalab/postgres
 
-# start ambassador container, linking to postgres,
+# start ambassador container, linking to postgres
 # -p map port 3031 from within container to outside
 sudo docker run --name host2_ambassador -d --link postgres:postgres -p 3031:3031 svendowideit/ambassador
 ```
@@ -59,3 +59,29 @@ sudo docker build -t postgres .
 # from here you run the same commands from the pulling section
 # except change cloudandbigdatalab/postgres to postgres in run command
 ```
+
+### Host 2
+
+#### Pulling from Docker Hub
+
+**Note**  
+You will need to replace the ip in one of the following commands.
+
+```sh
+# start ambassador container
+# --expose exposes port 3031 to containers that link to this one
+# -e sets environment variable for postgres, shared to linked containers
+# replace 10.12.0.51 with local ip of your host 1 instance
+sudo docker run --name host1_ambassador -d --expose 3031 -e POSTGRES_PORT_3031_TCP=tcp://10.12.0.51:3031 svendowideit/ambassador
+
+# start uwsgi container, linking to host1_ambassador
+sudo docker --name uwsgi -d --link host1_ambassador:postgres cloudandbigdatalab/uwsgi
+
+# start nginx container, linking to uwsgi container
+# map port 80 to outside, http default port
+sudo docker --name nginx -d --link uwsgi:uwsgi -p 80:80 cloudandbigdatalab/nginx
+```
+
+### Test Website
+
+Visit the public ip of your host 2 instance in the browser. You should see the site page below. If it worked congratulations!
