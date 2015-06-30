@@ -6,9 +6,34 @@ This repo is contains the files for the Chameleon Cloud Docker tutorial. You can
 
 It's expected that you have a general knowledge of Linux command-line environments, though most of the steps can be copied exactly without modification. No previous knowledge of Docker is required and we will provide some explanation of key Docker terms and concepts below. See the official Docker [docs](https://docs.docker.com/) for more detail and reference.
 
-## Docker Terms and Concepts
+## What is Docker?
 
-[ more explanation here ]
+Docker is conceptually similar to virtual machines but has much less resource overheard because it doesn't run a full guest OS. Docker containers start in seconds vs minutes, take up less space, and are less hardware demanding because they share resources with the host OS. Read in more detail [here](https://www.docker.com/whatisdocker).
+
+## Software, Terms, and Concepts Used Here
+
+Most of the docker terms are taken directly from their [glossary](https://docs.docker.com/reference/glossary/).
+
+Docker Engine or "Docker": The docker daemon process running on the host which manages images and containers
+
+Image: Docker images are the basis of containers. An Image is an ordered collection of root filesystem changes and the corresponding execution parameters for use within a container runtime. An image typically contains a union of layered filesystems stacked on top of each other. An image does not have state and it never changes.
+
+Docker Hub: The Docker Hub is a centralized resource for working with Docker and its components. Like GitHub but for Docker images.
+
+Container: A container is a runtime instance of a docker image. A Docker container consists of:
+
+- A Docker image
+- Execution environment
+- A standard set of instructions
+- The concept is borrowed from Shipping Containers, which define a standard to ship goods globally. Docker defines a standard to ship software.
+
+Dockerfile: A Dockerfile is a text document that contains all the commands you would normally execute manually in order to build a Docker image. Docker can build images automatically by reading the instructions from a Dockerfile. [Dockerfile Reference](https://docs.docker.com/reference/builder/)
+
+Postgres: An SQL database. [Official Site](http://www.postgresql.org)
+
+Nginx "engine x": A web server. [Official Site](http://nginx.com)
+
+uWGSI: An application server that connects to Nginx. In our tutorial we're using it to run a simple Python app that generates the demo page. [Official Site](https://uwsgi-docs.readthedocs.org/en/latest/)
 
 ## Steps Outline
 
