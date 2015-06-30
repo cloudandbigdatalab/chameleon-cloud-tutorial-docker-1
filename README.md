@@ -41,7 +41,7 @@ Most of the docker descriptions are taken directly from their [glossary](https:/
 ---|-------------|------------
 1 | Spin up Chameleon resources | 10
 2 | Software installation | 10
-3 | Setup app and ambassador contaiers, Postgres on host 1, Nginx and uWSGI on host 2 | 10
+3 | Setup app and ambassador containers, Postgres on host 1, Nginx and uWSGI on host 2 | 10
 4 | Test demo site to see if configuration was successful | 1
 
 ## 1. Chameleon Resources
