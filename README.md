@@ -12,7 +12,7 @@ Docker is conceptually similar to virtual machines but has much less resource ov
 
 ## Terms & Concepts
 
-Most of the docker term descriptions are taken directly from their [glossary](https://docs.docker.com/reference/glossary/).
+Most of the docker descriptions are taken directly from their [glossary](https://docs.docker.com/reference/glossary/).
 
 **Docker Engine or "Docker":** The docker daemon process running on the host which manages images and containers
 
