@@ -166,4 +166,4 @@ sudo docker build -t nginx .
 
 ### Test Website
 
-Visit the public ip of your host 2 instance in your browser. You should see like [this](https://raw.githubusercontent.com/cloudandbigdatalab/chameleon-docker-tutorial/master/tutorial_photos/demosite_screenshot.png). If it worked congratulations!
+Visit the public ip of your host 2 instance in your browser. You should see a page like [this](https://raw.githubusercontent.com/cloudandbigdatalab/chameleon-docker-tutorial/master/tutorial_photos/demosite_screenshot.png). If it worked congratulations!
