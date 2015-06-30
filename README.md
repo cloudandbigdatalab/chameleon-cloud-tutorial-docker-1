@@ -11,7 +11,7 @@ It's expected that you have a general knowledge of Linux command-line environmen
 \# | Description | Time (mins)
 ---|-------------|------------
 1 | Spin up Chameleon resources | 10-15
-2 | Setup app & ambassador contaiers, Postgres on host 1, Nginx & uWSGI on host 2 | 10
+2 | Setup app and ambassador contaiers <br> - Postgres on host 1 <br> - Nginx and uWSGI on host 2 | 10
 3 | Test demo site to see if configuration was successful | 1
 
 ## 1. Chameleon Resources
