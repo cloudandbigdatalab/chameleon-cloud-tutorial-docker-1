@@ -1,6 +1,6 @@
 # Chameleon Cloud Docker Tutorial
 
-This repo is contains the files for the Chameleon Cloud Docker tutorial. You can find all the Chameleon tutorials [here](https://cloudandbigdatalab.github.io). In this tutorial we're going to guide you through the fundamentals of using Docker on Chameleon Cloud. You should already be familiar with managing resources on Chameleon Cloud, if not follow the "Getting Started" tutorial. At the end of this tutorial you will have setup a demo website utilizing 5 Docker containers and 2 physical hosts.
+If you're not already on the GitHub repo page, you can find it [here](https://github.com/cloudandbigdatalab/chameleon-docker-tutorial). If you've come to this repo first, you can find this and all the Chameleon tutorials [here](https://cloudandbigdatalab.github.io). In this tutorial we're going to guide you through the fundamentals of using Docker on Chameleon Cloud. You should already be familiar with managing resources on Chameleon Cloud, if not follow the "Getting Started" tutorial. At the end of this tutorial you will have setup a demo website utilizing 5 Docker containers and 2 physical hosts.
 
 ## Prerequisites
 
