@@ -10,7 +10,7 @@ It's expected that you have a general knowledge of Linux command-line environmen
 
 Docker is conceptually similar to virtual machines but has much less resource overheard because it doesn't run a full guest OS. Docker containers start in seconds vs minutes, take up less space, and are less hardware demanding because they share resources with the host OS. Read in more detail [here](https://www.docker.com/whatisdocker).
 
-## Software, Terms, and Concepts Used Here
+## Terms & Concepts
 
 Most of the docker terms are taken directly from their [glossary](https://docs.docker.com/reference/glossary/).
 
