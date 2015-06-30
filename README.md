@@ -8,11 +8,11 @@ It's expected that you have a general knowledge of Linux command-line environmen
 
 ## Steps Outline
 
-1. Spin up Chameleon resources
-2. Setup containers
-  - Postgres and ambassador containers on host 1
-  - Nginx, uWSGI (Python), and ambassador containers on host 2
-4. Test demo site to see if configuration was successful
+Task | Time (mins)
+-----|------------
+1. | Spin up Chameleon resources | 10-15
+2. | Setup containersPostgres and ambassador containers on host 1, Nginx, uWSGI (Python), and ambassador containers on host 2 | 10
+3. | Test demo site to see if configuration was successful | 1
 
 ## 1. Chameleon Resources
 
