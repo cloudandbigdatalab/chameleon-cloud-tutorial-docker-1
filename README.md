@@ -4,22 +4,31 @@ This repo is contains the files for the Chameleon Cloud Docker tutorial. You can
 
 ## Prerequisites
 
-It's expected that you have a general knowledge of Linux command-line environments, though most of the steps can be copied exactly without modification. No previous knowledge of Docker is required but this tutorial will not explain Docker concepts, only how to implement. See the official Docker [docs](https://docs.docker.com/) for explanation of the concepts used in this tutorial.
+It's expected that you have a general knowledge of Linux command-line environments, though most of the steps can be copied exactly without modification. No previous knowledge of Docker is required and we will provide some explanation of key Docker terms and concepts below. See the official Docker [docs](https://docs.docker.com/) for more detail and reference.
+
+## Docker Terms and Concepts
+
+[ more explanation here ]
 
 ## Steps Outline
 
 \# | Description | Time (mins)
 ---|-------------|------------
-1 | Spin up Chameleon resources | 10-15
-2 | Setup app and ambassador contaiers <br> - Postgres on host 1 <br> - Nginx and uWSGI on host 2 | 10
-3 | Test demo site to see if configuration was successful | 1
+1 | Spin up Chameleon resources | 10
+2 | Software installation | 10
+3 | Setup app and ambassador contaiers <br> - Postgres on host 1 <br> - Nginx and uWSGI on host 2 | 10
+4 | Test demo site to see if configuration was successful | 1
 
 ## 1. Chameleon Resources
 
-Create 2 Chameleon baremetal servers. We used a CentOS 7 image for this tutorial but feel free to use any other Distro as long it runs Docker. Install Docker on each server with `sudo yum install docker`. You may also wish to install an editor such as vim and git (if not already installed).  
+Create 2 Chameleon baremetal servers. We used a CentOS 7 image for this tutorial but feel free to use any other Distro as long it runs Docker.
+
+## 2. Software Installation
+
+Install Docker on each server with `sudo yum install docker`. This installs the Docker daemon and client tools. You may also wish to install an editor such as vim and git (if not already installed, included in our CentOS image).
 
 **Important**  
-The Docker daemon needs to be running before you can use Docker. Start it with `sudo service docker start`. If you're getting errors with every Docker command this may be the cause.
+The Docker daemon needs to be running before you can use Docker. Start it with `sudo service docker start`. **If you're getting errors with every Docker command this may be the cause.**
 
 ## 2. Container Setup
 
