@@ -1,9 +1,9 @@
-# Chameleon Cloud Tutorial
-### Docker 1 - Fundamentals
-
-**National Science Foundation**  
-**Program Solicitation # NSF 13-602**  
-**CISE Research Infrastructure: Mid-Scale Infrastructure - NSFCloud (CRI: NSFCloud)**
+# Chameleon Cloud Tutorial - Docker 1 - Fundamentals
+* * *
+National Science Foundation  
+Program Solicitation # NSF 13-602  
+CISE Research Infrastructure: Mid-Scale Infrastructure - NSFCloud (CRI: NSFCloud)
+* * *
 
 In this tutorial we're going to guide you through the fundamentals of using Docker on Chameleon Cloud. You should already be familiar with managing resources on Chameleon Cloud, if not follow the "Getting Started" tutorial. At the end of this tutorial you will have setup a demo website utilizing 5 Docker containers and 2 physical hosts.
 
