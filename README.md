@@ -1,4 +1,5 @@
-# Chameleon Cloud Tutorial - Docker 1 - Fundamentals
+# Chameleon Cloud Tutorial
+### Docker 1 - Fundamentals
 * * *
 National Science Foundation  
 Program Solicitation # NSF 13-602  
