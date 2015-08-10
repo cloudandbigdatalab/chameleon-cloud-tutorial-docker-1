@@ -9,7 +9,7 @@ It's expected that you have a general knowledge of Linux command-line environmen
 
 ## What is Docker?
 
-Docker is conceptually similar to virtual machines but has much less resource overheard because it doesn't run a full guest OS. Docker containers start in seconds vs minutes, take up less space, and are less hardware demanding because they share resources with the host OS. Read in more detail [here](https://www.docker.com/whatisdocker).
+Docker is conceptually similar to virtual machines but has much less resource overheard because it doesn't run a full guest OS. Docker containers start in seconds vs minutes, take up less space, and are less hardware demanding because they share resources with the host OS. Read in-depth [here](https://www.docker.com/whatisdocker).
 
 ## Terms & Concepts
 
@@ -167,4 +167,4 @@ sudo docker build -t nginx .
 
 ### Test Website
 
-Visit the public ip of your host 2 instance in your browser. You should see a page like [this](https://raw.githubusercontent.com/cloudandbigdatalab/chameleon-docker-tutorial/master/tutorial_photos/demosite_screenshot.png). If it worked congratulations!
+Visit the public ip of your host 2 instance in your browser. If it worked congratulations!
