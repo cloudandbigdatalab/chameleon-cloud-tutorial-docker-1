@@ -1,7 +1,11 @@
 # Chameleon Cloud Tutorial
 ## Docker 1 - Fundamentals
 
-If you're not already on the GitHub repo page, you can find it [here](https://github.com/cloudandbigdatalab/chameleon-cloud-tutorial-docker-1). If you've come to this repo first, you can find this and all the Chameleon tutorials [here](https://cloudandbigdatalab.github.io). In this tutorial we're going to guide you through the fundamentals of using Docker on Chameleon Cloud. You should already be familiar with managing resources on Chameleon Cloud, if not follow the "Getting Started" tutorial. At the end of this tutorial you will have setup a demo website utilizing 5 Docker containers and 2 physical hosts.
+### National Science Foundation
+### Program Solicitation # NSF 13-602
+### CISE Research Infrastructure: Mid-Scale Infrastructure - NSFCloud (CRI: NSFCloud)
+
+In this tutorial we're going to guide you through the fundamentals of using Docker on Chameleon Cloud. You should already be familiar with managing resources on Chameleon Cloud, if not follow the "Getting Started" tutorial. At the end of this tutorial you will have setup a demo website utilizing 5 Docker containers and 2 physical hosts.
 
 ## Prerequisites
 
