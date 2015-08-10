@@ -170,6 +170,6 @@ sudo docker build -t nginx .
 # EXCEPT change cloudandbigdatalab/image_name to image_name
 ```
 
-### Test Website
+## Test Website
 
 Visit the public ip of your host 2 instance in your browser. If it worked congratulations!
