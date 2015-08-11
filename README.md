@@ -69,6 +69,7 @@ Before you move on let's explain some things. You will be setting up one host wi
 You have two options to deploy the containers. You can pull already built containers from our [Docker Hub](https://hub.docker.com/u/cloudandbigdatalab/) repos and run them. Or you can pull this GitHub repo and build the Docker images yourself using the Dockerfile in each directory. If you want to edit the site content you will need to build the images yourself after making your edits, although you can edit the database by simply connecting to it. The ambassador containers we're using are maintained by a Docker employee and thus we'll only be pulling those. You can pull an image before running it with `sudo docker pull image_name` or you can  just `sudo docker run --name container_name -d image_name` and Docker will automatically pull the image for you.
 
 **Useful Commands**
+
 ```sh
 # show running containers
 sudo docker ps
